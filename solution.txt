@@ -1,2 +1,48 @@
 Please add your pseudocode to this file
 And a written explanation of your solution
+
+Solution Description:
+The problem asks us to return all consecutive substrings of a given string.
+We treat the string like an array of characters and use two loops:
+ - The outer loop chooses the starting index of the substring.
+ - The inner loop chooses the ending index of the substring.
+For each pair of indices, we take a slice of the string and add it to the result list.
+
+Example:
+Input: "abc"
+Process:
+  - Start at "a": "a", "ab", "abc"
+  - Start at "b": "b", "bc"
+  - Start at "c": "c"
+Output: ["a", "ab", "abc", "b", "bc", "c"]
+
+Time Complexity:
+The solution uses two nested loops.
+- Outer loop runs n times (where n = length of string).
+- Inner loop runs up to n times for each outer loop.
+This gives O(n^2) total iterations.
+Therefore, the time complexity is O(n^2).
+The space complexity is also O(n^2) because we store all substrings.
+
+pseudocode
+
+// Function to get consecutive substrings
+function consecutiveSubstrings(string):
+
+    // create an empty list to store results
+    result = []
+
+    // loop over each starting index i
+    for i from 0 to length of string - 1:
+
+        // loop over each ending index j
+        for j from i + 1 to length of string:
+
+            // slice substring from i to j
+            substring = string[i...j]
+
+            // add substring to result list
+            result.append(substring)
+
+    // return the full list of substrings
+    return result
